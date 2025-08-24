@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'ts-clean-arch'
+      MYSQL_USER: 'root_user'
+      MYSQL_PASSWORD: 'root_password'
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
